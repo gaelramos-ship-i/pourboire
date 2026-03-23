@@ -4,12 +4,64 @@
     width: 800px;
     margin: auto;
     display: flex;
-    background: #fff;
+    background: $white;
     border-radius: 20px;
 }
 
 .bill{
     width: 50%;
+    margin: 30px;
+    text-align: left;
+
+    h2{
+        font-size: 16px;
+        color: $grey-500;
+    }
+}
+
+.btn{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    button{
+        padding: 10px;
+        background: $green-900;
+        border-radius: 10px;
+        color: $white;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: $family;
+        border: none;
+        transition: 0.3s ease-out;
+    }
+
+    button:hover{
+        background: $grey-200;
+        color: $green-900;
+        transition: 0.3s ease-out;
+    }
+
+    #custom{
+        background: $grey-50;
+    }
+
+    input{
+        height: 100%;
+        background: #00000000;
+        border: none;
+        width: 74px;
+        font-family: $family;
+        font-size: 16px;
+        font-weight: 700;
+        color: #00494d;
+    }
+
+    input::placeholder{
+        font-family: $family;
+        font-weight: 700;
+        font-size: 16px;
+        color: $grey-500;
+    }
 }
 
 .amount{
@@ -23,8 +75,33 @@
     article{
         display: flex;
         justify-content: space-between;
-        h3{
-            color: #fff;
+        align-items: center;
+        h2{
+            font-size: 40px;
         }
+        h3{
+            color: $white;
+            margin: 0;
+        }
+        p{
+            margin: 0;
+        }
+    }
+    button{
+        width: 100%;
+        text-transform: uppercase;
+        padding: 10px;
+        border-radius: 10px;
+        background: $green-400;
+        color: $green-900;
+        margin-top: 70px;
+        font-size: 16px;
+        font-weight: 700;
+        transition: 0.3s ease-out;
+    }
+    button:hover{
+        background: $grey-200;
+        color: $green-900;
+        transition: 0.3s ease-out;
     }
 }

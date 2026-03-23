@@ -2,17 +2,16 @@ import { useState } from "react"
 import './styles/app.scss'
 
 function App() {
-  let x = 0
   const [bill, setBill] = useState(0)
   const [people, setPeople] = useState(0)
   const [amount, setAmount] = useState(0)
   const [total, setTotal] = useState(0)
-  const [custom, setCustom] = useState(0)
+  const [custom, setCustom] = useState()
 
   function handleClick(pourcent) {
     let result = (bill * pourcent) / 100
     setAmount(result / people)
-    setTotal((parseFloat(bill) + result) / 5)
+    setTotal((parseFloat(bill) + result) / people)
 
     if (custom) {
       pourcent = custom
@@ -43,29 +42,19 @@ function App() {
             />
 
             <h2>Select tip %</h2>
-            <article>
+            <div className="btn">
               <button onClick={() => handleClick(5)}>5%</button>
-            </article>
-            <article>
               <button onClick={() => handleClick(10)}>10%</button>
-            </article>
-            <article>
               <button onClick={() => handleClick(15)}>15%</button>
-            </article>
-            <article>
               <button onClick={() => handleClick(25)}>25%</button>
-            </article>
-            <article>
               <button onClick={() => handleClick(50)}>50%</button>
-            </article>
-            <article>
-              <button onClick={() => handleClick(custom)}>
-                <input type="text"
+              <button id="custom" onClick={() => handleClick(custom)}>
+                <input type="number"
                   placeholder="Custom"
                   value={custom}
                   onChange={(e) => { setCustom(e.target.value) }} />
               </button>
-            </article>
+            </div>
 
             <h2>Number of People</h2>
             <input
@@ -95,7 +84,6 @@ function App() {
             <button onClick={() => reset()}>Reset</button>
           </div>
         </div>
-
       </section>
     </>
 

@@ -36,6 +36,7 @@ function App() {
           <div className="bill">
             <h2>Bill</h2>
             <input
+              className="inputBill"
               type="number"
               value={bill}
               onChange={(e) => { setBill(e.target.value) }}
@@ -58,6 +59,7 @@ function App() {
 
             <h2>Number of People</h2>
             <input
+              className="inputPerson"
               type="number"
               value={people}
               onChange={(e) => { setPeople(e.target.value) }}

@@ -1,13 +1,23 @@
 import { useState } from "react"
 
 function App() {
+  let x = 0
   const [bill, setBill] = useState(0)
   const [people, setPeople] = useState(0)
+  const [amount, setAmount] = useState(0)
+  const [total, setTotal] = useState(0)
 
   function handleClick(pourcent){
     let result = (bill * pourcent)/100
-    console.log(result / people)
-    return result / people
+    setAmount(result / people)
+    setTotal((parseFloat(bill) + result) / 5)
+  }
+
+  function reset(){
+    setBill(0)
+    setPeople(0)
+    setAmount(0)
+    setTotal(0)
   }
   
   return (
@@ -40,7 +50,7 @@ function App() {
           <button onClick={() => handleClick(50)}>50%</button>
         </article>
         <article>
-          <button>Custom</button>
+          <input type="text" placeholder="Custom" />
         </article>
       </div>
 
@@ -55,7 +65,7 @@ function App() {
           <h3>Tip Amount</h3>
           <p>/ person</p>
         </div>
-        <h2>$0.00</h2>
+        <h2>${amount.toFixed(2)}</h2>
       </article>
 
       <article>
@@ -63,8 +73,10 @@ function App() {
           <h3>Total</h3>
           <p>/ person</p>
         </div>
-        <h2>$0.00</h2>
+        <h2>${total.toFixed(2)}</h2>
       </article>
+
+      <button onClick={() => reset()}>Reset</button>
     </div>
     </>
     

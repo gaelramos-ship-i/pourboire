@@ -9,6 +9,7 @@ body{
     background-color: $grey-200;
     font-family: $family;
     font-size: 16px;
+    flex-wrap: wrap;
     img{
         padding: 80px 0;
     }

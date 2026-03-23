@@ -16,6 +16,7 @@
     h2{
         font-size: 16px;
         color: $grey-500;
+        margin-bottom: 8px;
     }
 
     .inputBill,
@@ -28,12 +29,12 @@
         font-family: $family;
         font-size: 16px;
         color: $green-900;
-
     }
 
     .inputBill{ 
         background: url('images/icon-dollar.svg') no-repeat scroll 7px 7px $grey-50;
         background-position: left;
+        margin-bottom: 20px;
     }
     .inputPerson{
         background: url('images/icon-person.svg') no-repeat scroll 7px 7px $grey-50;
@@ -45,6 +46,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    margin-bottom: 40px;
     button{
         padding: 10px;
         background: $green-900;
@@ -58,7 +60,7 @@
     }
 
     button:hover{
-        background: $grey-200;
+        background: $green-400;
         color: $green-900;
         transition: 0.3s ease-out;
     }
@@ -126,5 +128,31 @@
         background: $grey-200;
         color: $green-900;
         transition: 0.3s ease-out;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .container{
+        display: block;
+        width: 600px;
+        padding: 20px 0;
+    }
+    .amount{
+        width: auto;
+    }
+}
+
+@media screen and (max-width:767px){
+    .container{
+        width: 100%;
+    }
+    .bill{
+        width: auto;
+    }
+    .amount{
+        margin: 0;
+    }
+    .btn{
+        grid-template-columns: repeat(2, 1fr);
     }
 }

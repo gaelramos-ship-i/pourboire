@@ -1,0 +1,30 @@
+@import'./global.scss';
+
+.container{
+    width: 800px;
+    margin: auto;
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.bill{
+    width: 50%;
+}
+
+.amount{
+    width: 50%;
+    margin: 30px;
+    border-radius: 20px;
+    text-align: left;
+    background: $green-900;
+    color: $green-400;
+    padding: 20px;
+    article{
+        display: flex;
+        justify-content: space-between;
+        h3{
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import'./variables';
+
+body{
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: $grey-200;
+    font-family: $family;
+    img{
+        padding: 80px 0;
+    }
+}

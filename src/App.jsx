@@ -6,11 +6,16 @@ function App() {
   const [people, setPeople] = useState(0)
   const [amount, setAmount] = useState(0)
   const [total, setTotal] = useState(0)
+  const [custom, setCustom] = useState(0)
 
   function handleClick(pourcent){
     let result = (bill * pourcent)/100
     setAmount(result / people)
     setTotal((parseFloat(bill) + result) / 5)
+
+    if (custom){
+      pourcent = custom
+    }
   }
 
   function reset(){
@@ -50,7 +55,15 @@ function App() {
           <button onClick={() => handleClick(50)}>50%</button>
         </article>
         <article>
-          <input type="text" placeholder="Custom" />
+          <button onClick={() => handleClick(custom)}>
+            <input type="text" 
+            placeholder="Custom"
+            value={custom}
+            onChange={(e) => {setCustom(e.target.value)}} />
+          </button>
+        </article>
+        <article>
+          
         </article>
       </div>
 
